@@ -1,0 +1,84 @@
+
+
+header{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-height: max-content;
+    height: 10vh;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+
+    color: white;
+}
+
+.logo{
+    margin-right: auto;
+    text-transform: uppercase;
+    font-family: 'oceanic regular';
+    font-weight: 100;
+}
+
+.basket{
+    margin-left: auto;
+}
+
+
+.banner{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+}
+
+.title{
+    text-transform: uppercase;
+    font-family: 'oceanic regular';
+    font-weight: 400;
+    font-size: 17vw;
+    color: var(--accent-color);
+}
+
+.name{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'oceanic regular';
+    font-weight: 100;
+    font-size: 5vw;
+}
+
+.name-1{
+    margin-right: auto;
+}
+
+.name-2{
+    margin-left: auto;
+}
+
+.vilka{
+    position: absolute;
+}
+
+.light{
+    z-index: -1;
+    aspect-ratio: 1/1;
+    width: 617px;
+    position: absolute;
+    background: linear-gradient(0deg, #4164AB 0%, #4164AB 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    /* box-shadow: 400px 400px 400px; */
+    border-radius: 100%;
+    filter: blur(350px);
+}
