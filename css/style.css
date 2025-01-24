@@ -15,7 +15,10 @@
 }
 
 html{
+    display: flex;
     scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
