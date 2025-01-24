@@ -23,14 +23,15 @@ body{
     padding: 0;
     background-color: var(--primary-color);
     font-family: 'gilroy';
-    color: white;
+    color: var(--accent-color);
     max-width: 1920px;
 }
 
 :root{
     --primary-color: #011845;
     --secondary-color: #E9663D;
-    --accent-color: #496192;
+    --accent-color: #E8EDFF;
+    --dark-accent-color: #496192;
 }
 
 ::-webkit-scrollbar {

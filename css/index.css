@@ -16,6 +16,9 @@ header{
     width: 80%;
     min-height: max-content;
     height: 10vh;
+    /* position: sticky;
+    z-index: 1000;
+    top: 0; */
 }
 
 nav{
@@ -23,8 +26,6 @@ nav{
     justify-content: center;
     align-items: center;
     gap: 36px;
-
-    color: white;
 }
 
 .logo{
@@ -59,7 +60,7 @@ nav{
     font-family: 'oceanic regular';
     font-weight: 400;
     font-size: 340px;
-    color: var(--accent-color);
+    color: var(--dark-accent-color);
 }
 
 
@@ -103,15 +104,6 @@ nav{
     background: linear-gradient(0deg, #4164AB 0%, #4164AB 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
     border-radius: 100%;
     filter: blur(300px);
-}
-
-.test{
-    display: flex;
-    height: 50vh;
-    width: 100%;
-    background-image: url("../");
-    background-size: cover;
-    background-position: center;
 }
 
 
@@ -297,4 +289,108 @@ nav{
     text-align: left;
     line-height: 60px;
     text-transform: uppercase;
+}
+
+
+
+
+.product-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-accent-color);
+    height: 400px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.arrow-left{
+    margin-right: auto;
+}
+
+.arrow-right{
+    margin-left: auto;
+}
+
+.arrow{
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.arrow:hover{
+    transform: scale(1.2);
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+
+.product__info{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 20px;
+}
+
+.product__info
+.name{
+    font-family: 'oceanic regular';
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+}
+
+.product__info
+.weight{
+    margin-left: auto;
+}
+
+.product__info
+.cost{
+    font-weight: 900;
+}
+
+.product__info
+.button__in_basket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--secondary-color);
+    width: 180px;
+    height: 65px;
+}
+
+.product__image{
+    border-radius: 100%;
+    object-fit: unset;
+    height: 480px;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+    transition: all 0.5s ease;
+}
+
+.product__image:hover{
+    transform: scale(1.05);
+}
+
+.button__go_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    width: 285px;
+    height: 74px;
+    border: 1px solid white;
+    background-color: var(--primary-color);
+    align-self: center;
 }
