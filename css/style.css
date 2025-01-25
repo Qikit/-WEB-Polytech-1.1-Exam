@@ -35,6 +35,7 @@ body{
     --secondary-color: #E9663D;
     --accent-color: #E8EDFF;
     --dark-accent-color: #496192;
+    --add-color: #253F75;
 }
 
 ::-webkit-scrollbar {
