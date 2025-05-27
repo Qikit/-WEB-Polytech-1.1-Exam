@@ -1,0 +1,26 @@
+@media (max-width: 1024px){
+    /* Уменьшаем зазоры */
+    main, section{ gap: 120px; }
+    nav{ gap: 24px; }
+
+    /* Флекс-колонки вместо строк, где нужно */
+    .product-card,
+    .discount-card,
+    .delivery__facts{
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Баннер */
+    .banner .title{ font-size: 200px; }
+    .banner .name{ font-size: 60px; }
+    .banner .light{ width: 400px; filter: blur(220px); }
+
+    /* Фото/кружки меньше */
+    .product__image,
+    .discount__image{ height: 380px; }
+
+    /* Формы бронирования шире экрана */
+    .booking form{ width: 100%; }
+    .booking img{ display:none; }
+}

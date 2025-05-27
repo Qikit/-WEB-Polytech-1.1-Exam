@@ -44,8 +44,6 @@ nav{
 
 
 
-
-
 .button{
     transition: all 0.5s ease;
 }
@@ -54,6 +52,45 @@ nav{
     transform: scale(1.05);
 }
 
+
+
+
+
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 80vw;
+    gap: 40px;
+}
+
+section .title{
+    display: flex;
+    flex-direction: column;
+}
+
+section .title .main_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 120px;
+}
+
+section .title .main_title .section_name{
+    font-family: 'gilroy';
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+section .title .headline{
+    font-family: 'oceanic regular';
+    font-size: 56px;
+    font-weight: 500;
+    text-align: left;
+    line-height: 60px;
+    text-transform: uppercase;
+}
 
 
 
@@ -173,44 +210,6 @@ nav{
     background-color: var(--secondary-color);
     width: 285px;
     height: 74px;
-}
-
-
-section{
-    
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 80%;
-    gap: 40px;
-}
-
-section .title{
-    display: flex;
-    flex-direction: column;
-}
-
-section .title .main_title{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 120px;
-}
-
-section .title .main_title .section_name{
-    font-family: 'gilroy';
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-section .title .headline{
-    font-family: 'oceanic regular';
-    font-size: 56px;
-    font-weight: 500;
-    text-align: left;
-    line-height: 60px;
-    text-transform: uppercase;
 }
 
 
@@ -893,7 +892,7 @@ footer .menu .links{
 
 footer .menu h3{
     font-family: 'oceanic regular';
-    font-size: 24px;
+    font-size: clamp(8px, 1vw, 24px);;
     font-weight: 400;
 }
 
@@ -901,10 +900,38 @@ footer h2{
     text-transform: uppercase;
     font-family: 'oceanic regular';
     font-weight: 400;
-    font-size: 370px;
+    font-size: clamp(62px, 158px, 370px);;
     color: var(--add-color);
 }
 
 footer .design{
     margin-left: auto;
+}
+
+/* добавьте в самый конец index.css */
+
+:root{
+  --content-max: 1440px;                 /* основной лимит ширины */
+}
+
+/* единый &laquo;контейнер&raquo; – все крупные секции + шапка */
+main > *,                /* все прямые потомки main  */
+header,
+section,
+.banner, .about, .menu,
+.delivery, .reviews,
+.discounts, .booking,
+.contacts{
+  width: min(90vw, var(--content-max)); /* &laquo;резиновая&raquo; ширина */
+  margin-inline: auto;                  /* ЦЕНТРИРУЕМ блок по горизонтали */
+  box-sizing: border-box;               /* чтобы padding не раздувал ширину */
+}
+
+/* поправка для flex-layout’ов, где раньше был невалидный left */
+section{
+  justify-content: flex-start;          /* или нужное вам значение */
+}
+
+.headline, .banner .name{
+    font-size: clamp(32px, 4vw, 56px);
 }

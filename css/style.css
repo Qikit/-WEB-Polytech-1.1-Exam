@@ -27,7 +27,7 @@ body{
     background-color: var(--primary-color);
     font-family: 'gilroy';
     color: var(--accent-color);
-    max-width: 1920px;
+    --content-max: 1920px;
 }
 
 :root{

@@ -1,0 +1,61 @@
+@media (max-width: 768px){
+    header{ height: 64px; }
+    nav{ gap: 16px; font-size: 14px; }
+
+    .banner .title{ font-size: 140px; }
+    .banner .name{ font-size: 48px; }
+
+    .product__info,
+    .discount__info{ width: 100%; text-align:center; }
+
+    .product__image,
+    .discount__image{ height: 300px; margin: 0 auto; }
+
+    /* Карусель отзывов — показываем одну фото */
+    .reviews .photos{ overflow-x:auto; gap:16px; }
+    .reviews .photo{ flex: 0 0 180px; }
+
+    /* Убираем лишние &laquo;подсветки&raquo; */
+    .light{ display:none; }
+}
+
+@media (max-width: 480px){
+    /* Общая типографика */
+    body{ font-size: 14px; }
+    .headline{ font-size: 32px; line-height: 1.2; }
+
+    /* Шапка в одну строку с бургером (пример) */
+    nav{ display:none; }
+    .burger{
+        display:block;       /* добавьте иконку в разметку */
+        width:32px; height:32px; cursor:pointer;
+    }
+
+    .banner .title{ font-size: 96px; }
+    .banner .name{ font-size: 32px; }
+
+    /* Столбцы &rarr; колонки */
+    .banner .info,
+    .about .info,
+    .contacts .content{
+        flex-direction: column;
+        gap:24px;
+    }
+
+    /* Кнопки на всю ширину */
+    .button,
+    .button__menu,
+    .button__in_basket,
+    .button__take_discount,
+    .button__more,
+    .button__go_menu,
+    .button__booking{
+        width: 100%;
+    }
+
+    /* Картинки */
+    img, .product__image, .discount__image{
+        max-width: 100%;
+        height: auto;
+    }
+}
