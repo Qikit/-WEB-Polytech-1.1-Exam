@@ -40,6 +40,7 @@ nav{
     margin-left: auto;
 }
 
+.burger{display: none;}
 
 
 
@@ -930,8 +931,53 @@ section,
 /* поправка для flex-layout’ов, где раньше был невалидный left */
 section{
   justify-content: flex-start;          /* или нужное вам значение */
-}
+}   
 
 .headline, .banner .name{
     font-size: clamp(32px, 4vw, 56px);
+}
+
+:root{
+  --content-max: 1440px;                 /* основной лимит ширины */
+}
+
+/* единый &laquo;контейнер&raquo; – все крупные секции + шапка */
+main > *,                /* все прямые потомки main  */
+header,
+section,
+.banner, .about, .menu,
+.delivery, .reviews,
+.discounts, .booking,
+.contacts{
+  width: min(90vw, var(--content-max)); /* &laquo;резиновая&raquo; ширина, 90vw для отступов по краям */
+  margin-inline: auto;                  /* ЦЕНТРИРУЕМ блок по горизонтали */
+  box-sizing: border-box;               /* чтобы padding не раздувал ширину */
+  padding-left: 20px; /* Добавляем внутренние отступы для маленьких экранов */
+  padding-right: 20px; /* Добавляем внутренние отступы для маленьких экранов */
+}
+
+/* поправка для flex-layout’ов, где раньше был невалидный left */
+section{
+  justify-content: flex-start;          /* или нужное вам значение */
+}
+
+.headline, .banner .name{
+    font-size: clamp(32px, 4vw, 56px); /* Универсальное clamp для заголовков */
+}
+
+/* Уточнение для большого заголовка на баннере */
+.banner .title{
+    font-size: clamp(96px, 15vw, 340px); /* Адаптивный размер для 'Aquarim' */
+}
+
+/* Добавлено для футера, чтобы он всегда был на 100% ширины viewport */
+footer {
+    width: 100%;
+    padding-left: min(90vw, var(--content-max)) * 0.05; /* Отступы для футера */
+    padding-right: min(90vw, var(--content-max)) * 0.05; /* Отступы для футера */
+}
+
+/* Скорректируйте размер логотипа Aquarim в футере */
+footer h2 {
+    font-size: clamp(40px, 8vw, 158px); /* Более адекватный размер для лого в футере */
 }

@@ -1,38 +1,93 @@
 @media (max-width: 768px){
-    header{ height: 64px; }
-    nav{ gap: 16px; font-size: 14px; }
+    header{
+        height: 64px;
+        gap: 16px;
+        padding-left: 15px; /* Уменьшим отступы для телефона */
+        padding-right: 15px; /* Уменьшим отступы для телефона */
+    }
+    nav{ display:none; }
+    .burger{
+        margin-left: auto;
+        display:block;
+        width:32px; height:32px; cursor:pointer;
+    }
+    .basket {
+        display: block; /* Убедимся, что корзина видна на смартфоне */
+        margin-left: 10px; /* Отступ от бургера */
+    }
 
-    .banner .title{ font-size: 140px; }
-    .banner .name{ font-size: 48px; }
+    .banner .title{ font-size: 100px; } /* Уменьшим для 768px */
+    .banner .name{ font-size: 40px; } /* Уменьшим для 768px */
 
     .product__info,
     .discount__info{ width: 100%; text-align:center; }
 
     .product__image,
-    .discount__image{ height: 300px; margin: 0 auto; }
+    .discount__image{ height: 250px; margin: 0 auto; } /* Еще меньше */
+
+    .product, .discount {
+        flex-direction: column; /* Убедимся, что они в колонку */
+        gap: 20px;
+    }
 
     /* Карусель отзывов — показываем одну фото */
-    .reviews .photos{ overflow-x:auto; gap:16px; }
-    .reviews .photo{ flex: 0 0 180px; }
+    .reviews .photos{
+        overflow-x:auto;
+        gap:16px;
+        justify-content: flex-start; /* Начнем с начала для скролла */
+    }
+    .reviews .photo, .reviews .review-start{
+        flex: 0 0 160px; /* Немного уменьшим размер фото */
+        height: 230px;
+    }
+    .reviews .photo-headline {
+        flex-direction: column; /* Заголовок отзывов в колонку */
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+    .reviews .lore {
+        width: 100%; /* Лоре отзыва на всю ширину */
+        text-align: center;
+    }
+    .reviews .photo-headline .arrows {
+        margin: 0 auto; /* Центрируем стрелки */
+    }
 
     /* Убираем лишние &laquo;подсветки&raquo; */
     .light{ display:none; }
+
+    .vilka{
+        scale: 0.4; /* Еще меньше вилка */
+    }
+
+    /* Доставка - для 768px, чтобы факты занимали всю ширину */
+    .delivery .two-facts, .delivery .fact.f3 {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px){
     /* Общая типографика */
     body{ font-size: 14px; }
-    .headline{ font-size: 32px; line-height: 1.2; }
+    .headline{ font-size: 28px; line-height: 1.2; } /* Еще уменьшим заголовки */
 
     /* Шапка в одну строку с бургером (пример) */
     nav{ display:none; }
     .burger{
-        display:block;       /* добавьте иконку в разметку */
+        margin-left: auto;
+        display:block;
         width:32px; height:32px; cursor:pointer;
     }
+    .basket {
+        display: block;
+        margin-left: 10px;
+    }
 
-    .banner .title{ font-size: 96px; }
-    .banner .name{ font-size: 32px; }
+    .banner .title{ font-size: 70px; } /* Уменьшим для 480px */
+    .banner .name{ font-size: 28px; } /* Уменьшим для 480px */
 
     /* Столбцы &rarr; колонки */
     .banner .info,
@@ -50,12 +105,61 @@
     .button__more,
     .button__go_menu,
     .button__booking{
-        width: 100%;
+        width: 100%; /* Все кнопки на всю ширину */
+        height: 60px; /* Немного уменьшим высоту кнопок */
+        font-size: 16px; /* Размер текста кнопки */
     }
 
     /* Картинки */
-    img, .product__image, .discount__image{
-        max-width: 100%;
+    img, .product__image, .discount__image, .contacts_image, .about .cooker{
+        max-width: 100%; /* Все изображения по ширине контейнера */
         height: auto;
+    }
+
+    /* Отступы между секциями */
+    main, section {
+        gap: 60px; /* Уменьшим отступы между секциями для мобильных */
+    }
+
+    /* Форма бронирования */
+    .booking form {
+        gap: 30px; /* Уменьшим зазоры в форме */
+    }
+    .booking .line {
+        flex-direction: column; /* Строки формы в колонки */
+        gap: 15px; /* Зазор между полями в одной строке */
+    }
+    .booking label {
+        width: 100%; /* Label занимает всю ширину */
+    }
+    .booking input {
+        width: 100%; /* Все инпуты на всю ширину */
+        min-width: unset; /* Убираем min-width */
+    }
+    .booking .l3 input {
+        height: 120px; /* Уменьшим высоту текстового поля */
+    }
+
+    /* Футер */
+    footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    footer .line {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    footer .copyright, footer .design {
+        margin: 0;
+    }
+    footer .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+    footer .menu .links-card {
+        align-items: center;
     }
 }
